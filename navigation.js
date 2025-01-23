@@ -11,33 +11,28 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import SaleDetails from './components/SaleDetails';
 import HomeScreen from './screens/HomeScreen';
 
-
 const Stack = createNativeStackNavigator();
 
 export default function Navigation() {
-  const { user, role } = useAuth();
-
-  if (!user) {
-    return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
-          <Stack.Screen name = 'Welcome' component={WelcomeScreen}/>
-          <Stack.Screen name = "SignIn" component={SignIn} />
-          <Stack.Screen name = "Register" component={Register} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
+  const { user } = useAuth();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={'HomeScreen'} screenOptions={{ headerShown: false }}>
-        <Stack.Screen name= 'HomeScreen' component={HomeScreen}/>
-        <Stack.Screen name='DeliveryHome' component={DeliveryHome}/>
-        <Stack.Screen name='MapPlan' component={MapPlan}/>
-        <Stack.Screen name='SalesHome' component={SalesHome}/>
-        <Stack.Screen name='SaleDetails' component={SaleDetails}/>
-      </Stack.Navigator>
+      {!user ? (
+        <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Welcome" component={WelcomeScreen} />
+          <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="Register" component={Register} />
+        </Stack.Navigator>
+      ) : (
+        <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen name="DeliveryHome" component={DeliveryHome} />
+          <Stack.Screen name="MapPlan" component={MapPlan} />
+          <Stack.Screen name="SalesHome" component={SalesHome} />
+          <Stack.Screen name="SaleDetails" component={SaleDetails} />
+        </Stack.Navigator>
+      )}
     </NavigationContainer>
   );
 }
