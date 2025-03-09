@@ -2,10 +2,7 @@
   "expo": {
     "name": "Assign",
     "slug": "Assign",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/AppIcon.png",
@@ -24,10 +21,7 @@
         "foregroundImage": "./assets/AppIcon.png",
         "backgroundColor": "#F9F6EE"
       },
-      "permissions": [
-        "ACCESS_FINE_LOCATION",
-        "ACCESS_COARSE_LOCATION"
-      ],
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
       "package": "com.runforservice.Assign",
       "newArchEnabled": true
     },
@@ -35,10 +29,10 @@
       "favicon": "./assets/icon.png"
     },
     "extra": {
-      "googleApiKey": "AIzaSyAhv_bD5bhvkjh0lH0ycCG2p84EPIm3Gx8",
       "eas": {
-        "projectId": "11b8b332-e863-45de-a574-1b8d5d5058c6"
+        "projectId": "9a2bfb42-9641-4207-939f-cbe17c5454a9"
       }
-    }
+    },
+    "owner": "venkatasai7"
   }
 }
